@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Simple Places Autocomplete
+        </title>
+        <link rel="stylesheet" href="style.css">
+        <script
+            defer
+            type="module"
+            src="https://unpkg.com/@googlemaps/extended-component-library@0.6">
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <!-- <gmpx-api-loader
+            id="google-map"
+                key="AIzaSyB1hGmh_bwgazQrYqq_v5c8bc6JS0VEXJ8"
+                solution-channel="GMP_GE_placepicker_v1"></gmpx-api-loader> -->
+            <div id="place-picker-box">
+                <h2>Starting point:
+                    </h2>
+                <div id="place-picker-container">
+                    <gmpx-place-picker id="place-picker" placeholder="Enter an address"></gmpx-place-picker>
+                </div>
+            </div>
+
+            <div id="destination-picker">
+                <ul id="destinations">
+                    <li >
+                        <h3>Destination 1</h3>
+                        <gmpx-place-picker class="destination" placeholder="Enter the first destination"></gmpx-place-picker></li>
+                    <li >
+                        <h3>Destination 2</h3>
+                        <gmpx-place-picker class="destination" placeholder="Enter the second destination"></gmpx-place-picker></li>
+                </ul>
+                <button id="add" type="button" onclick="addDestination()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/></svg>
+</button>
+            </div>
+            
+
+            <button class="submit" type="submit" onclick="getPlace()">Submit</button>
+        </div>
+
+    </body>
+                
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1hGmh_bwgazQrYqq_v5c8bc6JS0VEXJ8&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script src="index.js"></script>
+
+</html>
